@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pickle
 import os
 import numpy as np
@@ -47,7 +47,7 @@ def results():
     prediction = model.predict([[feature1, feature2, feature3, feature4, feature5]])
     
     # pass the prediction to the results template
-    return render_template('results.html', prediction=prediction)
+    return render_template('result.html', prediction=prediction)
 
 
 if __name__ == '__main__':
